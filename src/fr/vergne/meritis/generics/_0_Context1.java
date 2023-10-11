@@ -20,47 +20,18 @@ public class _0_Context1 {
 //		sumStrings(myInts);
 	}
 
-	interface ListOfStrings {
-		int size();
-		void add(String value);
-		String get(int index);
-	}
-
 	interface ListOfInts {
 		int size();
 		void add(int value);
 		int get(int index);
 	}
 
-	static class LinkedListOfStrings implements ListOfStrings {
-		class LinkedValue {
-			String value;
-			LinkedListOfStrings next;
-		}
-		LinkedValue current = null;
-
-		@Override
-		public int size() {
-			return current == null ? 0 : 1 + current.next.size();
-		}
-
-		@Override
-		public void add(String value) {
-			if (current == null) {
-				current = new LinkedValue();
-				current.value = value;
-				current.next = new LinkedListOfStrings();
-			} else {
-				current.next.add(value);
-			}
-		}
-
-		@Override
-		public String get(int index) {
-			return index == 0 ? current.value : current.next.get(index - 1);
-		}
+	interface ListOfStrings {
+		int size();
+		void add(String value);
+		String get(int index);
 	}
-
+	
 	static class LinkedListOfInts implements ListOfInts {
 		class LinkedValue {
 			Integer value;
@@ -90,6 +61,35 @@ public class _0_Context1 {
 		}
 	}
 	
+	static class LinkedListOfStrings implements ListOfStrings {
+		class LinkedValue {
+			String value;
+			LinkedListOfStrings next;
+		}
+		LinkedValue current = null;
+
+		@Override
+		public int size() {
+			return current == null ? 0 : 1 + current.next.size();
+		}
+
+		@Override
+		public void add(String value) {
+			if (current == null) {
+				current = new LinkedValue();
+				current.value = value;
+				current.next = new LinkedListOfStrings();
+			} else {
+				current.next.add(value);
+			}
+		}
+
+		@Override
+		public String get(int index) {
+			return index == 0 ? current.value : current.next.get(index - 1);
+		}
+	}
+
 	private static int sumInts(ListOfInts myList) {
 		int total = 0;
 		for (int i = 0; i < myList.size(); i++) {

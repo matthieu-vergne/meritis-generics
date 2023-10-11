@@ -4,7 +4,7 @@ import static fr.vergne.meritis.generics.__Annexes.*;
 import java.util.List;
 
 public abstract class _C_OubliGenerics3 {
-	// Wildcard = raw type ?
+	// Joker = type brut ?
 	void methodWithRawType(List list) {
 		list.add(new Object()); // Cas rétrocompatible
 		Object a = list.get(0); // Cas rétrocompatible

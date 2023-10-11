@@ -64,6 +64,7 @@ public class _B_NotationDiamant {
 							(list1, list2) -> list1.addAll(list2)//
 					)//
 					.get(0);
+			// Et si value est un entier ?
 		}
 		
 		class NoDiamond {

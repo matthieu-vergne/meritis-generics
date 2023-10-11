@@ -33,5 +33,5 @@ public abstract class _C_OubliGenerics2 {
 		consumeListOfWildcard(list);
 		consumeListRaw(list); // Cas rétrocompatible
 	}
-	// Wildcard toujours compatible ?
+	// Joker toujours compatible ?
 }

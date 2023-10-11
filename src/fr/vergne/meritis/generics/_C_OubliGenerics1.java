@@ -24,5 +24,5 @@ public abstract class _C_OubliGenerics1 {
 		list.add(new_Integer());
 		Integer c = list.get(0);
 	}
-	// /!\ Object le plus proche de raw type, mais pas equivalent !
+	// /!\ Object le plus proche de type brut, mais pas equivalent !
 }
