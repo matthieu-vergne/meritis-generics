@@ -1,4 +1,7 @@
 package fr.vergne.meritis.generics;
+import static fr.vergne.meritis.generics.__Annexes.new_Integer;
+import static fr.vergne.meritis.generics.__Annexes.new_Number;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,9 +16,36 @@ public class _A_DiffSpecialisationContrainte1 {
 	
 	class Answer {
 		// Aucune différence pour 1 usage du generics
-		void methodBound(List<? extends C> list) {/*...*/}
-		<T extends C> void methodDef(List<T> list) {/*...*/}
-		<T extends C> void methodBoundDef(List<? extends T> list) {/*...*/}
+		void methodBound(List<? extends C> list) {
+			list.add(new Object());
+			Object a = list.get(0);
+			
+			list.add(new_Number());
+			Number b = list.get(0);
+			
+			list.add(new_Integer());
+			Integer c = list.get(0);
+		}
+		<T extends C> void methodDef(List<T> list) {
+			list.add(new Object());
+			Object a = list.get(0);
+			
+			list.add(new_Number());
+			Number b = list.get(0);
+			
+			list.add(new_Integer());
+			Integer c = list.get(0);
+		}
+		<T extends C> void methodBoundDef(List<? extends T> list) {
+			list.add(new Object());
+			Object a = list.get(0);
+			
+			list.add(new_Number());
+			Number b = list.get(0);
+			
+			list.add(new_Integer());
+			Integer c = list.get(0);
+		}
 		
 		void Object() {
 			List<Object> list = new LinkedList<Object>();
